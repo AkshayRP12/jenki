@@ -1,0 +1,22 @@
+ sudo apt update
+ sudo apt install docker.io -y
+ sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+ mkdir my-python-app
+ cd my-python-app
+ nano app.py
+ nano Dockerfile
+ nano requirements.txt
+ git init
+ git config --global user.name "AkshayRP12"
+ git config --global user.email "akshayrp3459@gmail.com"
+ git add .
+ git commit -m "initial commit"
+ git remote add origin https://github.com/AkshayRP12/ada.git
+ git branch -m master
+ git push -u origin master
+ sudo docker build -t my-python-app .
+ docker tag my-python-app:latest akshayrp12/my-python-app:latest
+  docker images
+  sudo docker run -d -p 5000:5000 --name container akshayrp12/my-python-app
+  sudo docker push akshayrp12/my-python-app
+  
